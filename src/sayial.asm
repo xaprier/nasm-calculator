@@ -1,4 +1,3 @@
-; deneme2.asm temizlenmiş hali
 extern printf
 
 %macro inputal 1
@@ -30,6 +29,7 @@ section .data
     virgulkatar:    dq  "", 0
     tamkatar:       dq  "", 0
 
+    gecici:         dq  "", 0
 
     sayiuzun:       equ 15
     YNS             dq 10
@@ -79,7 +79,6 @@ sayial:
     div rcx
     cvtsi2sd xmm1, rax
 
-
 ; sadece tam sayı girilirse?
     mov rsi, sayi
     mov al, byte[rsi+r8]
@@ -94,7 +93,7 @@ sayial:
     
 ; .'dan sonraki null terminator'e kadar olan kısmın uzunluğu bulundu ve rcx yazmacında
     lea rsi, [sayi+r8]      ; sayi'nin başlangıç adresi
-    lea rdi, [virgulkatar]    ; hedef kaynak
+    lea rdi, [virgulkatar]  ; hedef kaynak
     sub rcx, r8             ; tüm sayının uzunluğu - .'nın adresi(virgül kısmın uzunluğu döner)
     mov r8, rcx             ; r8'de virgül kısmın uzunluğunu yedek diye tutuyoruz
     rep movsb               ; ve hedef kaynağa, alınan kaynaktan kopyalama işlemi yapıyoruz
@@ -117,7 +116,17 @@ bolsene:
     vdivsd xmm2, [boluneceksayi]
     loop bolsene
     vaddpd xmm1, xmm2
-    
+
+    mov rax, 0
+    mov rdi, tamkatar
+    mov rcx, sayiuzun
+    rep stosb
+
+    mov rax, 0
+    mov rdi, virgulkatar
+    mov rcx, sayiuzun
+    rep stosb
+
 son:
     mov rsp, rbp
     pop rbp
