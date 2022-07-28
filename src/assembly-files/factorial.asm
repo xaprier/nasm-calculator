@@ -37,7 +37,7 @@ factorial:
 		; loop with jump
 		jmp calc
 	endLoop:
-		; store the result in xmm1 and buffer
+		; store the result in xmm1
 		movsd xmm1, xmm0
 		; store the coming number back in the xmm0
 		movsd xmm0, [result]
