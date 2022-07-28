@@ -1,6 +1,9 @@
 # nasm-calculator
 A calculator with input/outputs and string->decimal number converting programmed with NASM Assembly
 
+### Recording code sessions and uploaded to YouTube playlist 
+<a href="https://youtube.com/playlist?list=PLUWaeJl-QWIK_1kxDXxHd1BN9Av0LzF9C" target="_blank">Click for playlist!</a>
+
 ## How to compile and run
 First of all you have to install nasm and GCC(GNU Compiler Collection) for compile and run the program. This article is only for UNIX users.
 
