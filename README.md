@@ -9,12 +9,12 @@ First of all you have to install nasm and GCC(GNU Compiler Collection) for compi
 
 For install the nasm and GCC on Ubuntu/Debian based Operating Systems
 ```sh
-sudo apt-get -y install nasm && sudo apt-get -y install build-essential && sudo apt-get update -y 
+sudo apt-get -y install nasm build-essentials && sudo apt-get update -y 
 ```
 
 For install the nasm and GCC on Arch based using pacman Operating Systems(gdb optional for debugging*)
 ```sh
-sudo pacman -S nasm && sudo pacman -S base-devel && sudo pacman -S gdb && sudo pacman -Syu
+sudo pacman -Syu nasm base-devel gdb make
 ```
 
 Clone the repository using git. If you don't have git then you have to install it.
