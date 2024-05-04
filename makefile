@@ -1,10 +1,10 @@
 
-SRC_DIR := ./assembly-files
-OBJ_DIR := ./object-files
+SRC_DIR := ./src
+OBJ_DIR := ./obj
 SRC_FILES := $(wildcard $(SRC_DIR)/*.asm)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.asm,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
-CREATE_DIR := $(shell mkdir -p object-files)
+CREATE_DIR := $(shell mkdir -p obj)
 
 calculator: $(OBJ_FILES)
 	gcc $^ -o $@ -no-pie
